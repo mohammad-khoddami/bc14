@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="./main.css" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <input onkeydown="handleKeyDown(event)" onkeyup="handleKeyUp(event)" /> -->
+        <!-- 
+        <div id="input-div">
+            <input type="text" onkeyup="print(event)" />
+        </div> -->
+
+        <div class="accordion">
+            <div class="header">
+                <h2>This is an accordion</h2>
+                <button onclick="handleToggle(event)">show</button>
+            </div>
+            <div class="content hidden" id="content">
+                <p>
+                    This is an accordion This is an accordion This is an
+                    accordion This is an accordion This is an accordion This is
+                    an accordion This is an accordion This is an accordion This
+                    is an accordion This is an accordion This is an accordion
+                    This is an accordion
+                </p>
+            </div>
+        </div>
+
+        <button id="btn">Click on me</button>
+
+        <!-- <div
+            class="box"
+            onmouseenter="handleEnter(event)"
+            onmouseleave="handleLeave(event)"
+        >
+            <div class="box-child"></div>
+        </div> -->
+
+        <!-- <div
+            class="box"
+            onmouseover="handleEnter(event)"
+            onmouseout="handleLeave(event)"
+        >
+            <div class="box-child"></div>
+        </div> -->
+        <!-- 
+        <div class="box" onmousemove="handleMove(event)"></div> -->
+
+        <div
+            style="width: max-content"
+            onmouseenter="handleOpen()"
+            onmouseleave="handleClose()"
+        >
+            <p>دسته بندی کالاها</p>
+            <div id="menu"></div>
+        </div>
+
+        <script src="./app.js"></script>
+    </body>
+</html>

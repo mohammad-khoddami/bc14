@@ -1,0 +1,21 @@
+.text-red {
+    color: red;
+}
+
+.text-green {
+    color: green;
+}
+
+.card {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    width: max-content;
+    direction: rtl;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+}
