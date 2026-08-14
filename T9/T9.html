@@ -3,11 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet" />
     <title>Document</title>
   </head>
   <body>
-    <div id="box">
-      <p>Hello</p>
+    <p class="font">Product Manager</p>
+    <div>
+      <input class="box" ="text" placeholder="Product Name" id="name" />
+      <input class="box" ="text" placeholder="Catagory" id="category" />
+      <input class="box" ="text" placeholder="Price" id="price" />
+      <input class="box" ="text" placeholder="Quantity" id="quantity" />
+      <button class="button" id="add" onclick="addProduct()">Add</button>
+    </div>
+    <div>
+      <select class="box" id="category"></select>
+    </div>
+    <div>
+      <table class="table" id="producttable">
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th class="">Action</th>
+        </tr>
+      </table>
     </div>
     <script src="./S13.js"></script>
   </body>
