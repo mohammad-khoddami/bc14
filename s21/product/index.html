@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="./style.css" rel="stylesheet" />
+        <title>CRUD Product</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Product Manager</h1>
+            <form class="form" onsubmit="handleAdd(event)">
+                <div class="form-item">
+                    <label for="product-name">Name</label>
+                    <input id="product-name" />
+                </div>
+                <div class="form-item">
+                    <label for="product-category">Category</label>
+                    <input id="product-category" />
+                </div>
+                <div class="form-item">
+                    <label for="product-price">Price</label>
+                    <input type="number" id="product-price" />
+                </div>
+                <div class="form-item">
+                    <label for="product-quantity">Quantity</label>
+                    <input type="number" id="product-quantity" />
+                </div>
+
+                <div>
+                    <button class="add-btn">Add</button>
+                </div>
+            </form>
+
+            <div class="filter">
+                <input id="filter-name" onkeyup="handleFilterName()" />
+                <select
+                    id="filter-category"
+                    onchange="handleFilterCategory()"
+                ></select>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+        <script src="./app.js"></script>
+    </body>
+</html>
