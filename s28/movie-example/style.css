@@ -1,0 +1,48 @@
+.container {
+    padding: 0 80px;
+}
+
+.movie-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(62, 300px);
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    h5 {
+        margin: 12px 0;
+    }
+    img {
+        border-radius: 5px 5px 0 0;
+    }
+    .rate {
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        color: gray;
+        .rate-per {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .content {
+        padding: 0 8px;
+    }
+    .genre {
+        span {
+            border-radius: 20px;
+            padding: 0 8px;
+            font-size: 12px;
+        }
+    }
+    .duration {
+        font-size: 10px;
+        color: gray;
+    }
+}
