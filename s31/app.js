@@ -7,7 +7,9 @@ const tagElement = document.getElementById("tags");
 
 async function getRecipes() {
     try {
-        const response = await fetch("https://dummyjson.com/recipes");
+        const response = await fetch("https://dummyjson.com/recipes", {
+            method: "GET",
+        });
         const result = await response.json();
 
         printRecipes(result.recipes);
