@@ -15,8 +15,15 @@ export default function Button({ size, text, children }) {
 
     const btnSize = getSize();
 
+    function handleClick() {
+        console.log("clicked on me!!");
+    }
+
     return (
-        <button className={`${btnSize.w} ${btnSize.h} bg-blue-500`}>
+        <button
+            className={`${btnSize.w} ${btnSize.h} bg-blue-500 cursor-pointer`}
+            onClick={handleClick}
+        >
             {children || text || "Empty Button"}
         </button>
     );
