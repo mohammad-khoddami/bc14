@@ -17,6 +17,12 @@ import Text from "./components/text";
 import Login from "./components/login";
 import LoginUser from "./components/loginUser";
 import FetchData from "./components/fetch-data";
+import WindowSize from "./components/window-size";
+import Timer from "./components/timer";
+import DelayCounter from "./components/delay-counter";
+import C from "./components/levels/c";
+import NameContext from "./context/NameContext";
+import ThemeContext from "./context/ThemeContext";
 
 const user = {
     name: "nafise",
@@ -83,21 +89,26 @@ const products = [
     },
 ];
 
+const name = "Fredrik";
+
 export default function App() {
     const [text, setText] = useState("");
+    const [show, setShow] = useState(true);
+    const [theme, setTheme] = useState("dark");
 
     function handleChange(value) {
         setText(value);
     }
 
     return (
-        <Layout text={text}>
-            {/* <Login /> */}
-            {/* <LoginUser /> */}
-            {/* <Text />
+        <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
+            <Layout text={text}>
+                {/* <Login /> */}
+                {/* <LoginUser /> */}
+                {/* <Text />
                 <Image />
                 <Header /> */}
-            {/* <BeautifulButton />
+                {/* <BeautifulButton />
             <Input />
             <Counter />
             <SearchInput />
@@ -107,14 +118,30 @@ export default function App() {
             <Button text="Click On Me" size="large">
                 <span>This is a Button</span>
             </Button> */}
-            {/* <div className="grid grid-cols-4 gap-5">
+                {/* <div className="grid grid-cols-4 gap-5">
                 {products.map((product, i) => (
                     <Card key={i} product={product} />
                     ))}
                     </div> */}
-            {/* <Password /> */}
-            {/* <MyInput text={text} change={handleChange} /> */}
-            <FetchData />
-        </Layout>
+                {/* <Password /> */}
+                {/* <MyInput text={text} change={handleChange} /> */}
+                {/* <FetchData /> */}
+                {/* <button
+                onClick={() => setShow(!show)}
+                className="border active:bg-red-500 rounded-sm px-2 cursor-pointer"
+            >
+            {show ? "hide" : "show"}
+            </button>
+            {show && <WindowSize />}
+            {show && <Timer />} */}
+                {/* <DelayCounter /> */}
+                <NameContext.Provider value={name}>
+                    <div className="bg-red-200 h-40">
+                        <span>App:</span>
+                        <C />
+                    </div>
+                </NameContext.Provider>
+            </Layout>
+        </ThemeContext.Provider>
     );
 }
