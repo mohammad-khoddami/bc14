@@ -23,6 +23,7 @@ import DelayCounter from "./components/delay-counter";
 import C from "./components/levels/c";
 import NameContext from "./context/NameContext";
 import ThemeContext from "./context/ThemeContext";
+import { sum } from "./utils/math";
 
 const user = {
     name: "nafise",
@@ -103,6 +104,8 @@ export default function App() {
     return (
         <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
             <Layout text={text}>
+                <span>{sum(4, 5)}</span>
+                <span>{sum("ali", "mirzaii")}</span>
                 {/* <Login /> */}
                 {/* <LoginUser /> */}
                 {/* <Text />
