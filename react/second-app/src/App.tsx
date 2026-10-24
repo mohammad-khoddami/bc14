@@ -1,21 +1,18 @@
-import {
-    concat,
-    payStatus,
-    printNumberList,
-    sum,
-    sumOrConcat,
-} from "./utils/math";
+import { BrowserRouter, Route, Routes } from "react-router";
+import HomePage from "./pages/home/homePage";
+import PostListPage from "./pages/post/postListPage";
+import Layout from "./components/layout";
 
 function App() {
     return (
-        <div>
-            <p>{sum(14, 2)}</p>
-            <p>{concat("1", "3")}</p>
-            <p>{sumOrConcat("aria", "bahrami")}</p>
-            <p>{sumOrConcat(12, 2)}</p>
-            <p>{payStatus("payed")}</p>
-            <p>{printNumberList(["apple", "banana", 2])}</p>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<HomePage />} />
+                    <Route path="/post-list" element={<PostListPage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
