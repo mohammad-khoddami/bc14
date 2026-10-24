@@ -1,4 +1,10 @@
-import { concat, payStatus, sum, sumOrConcat } from "./utils/math";
+import {
+    concat,
+    payStatus,
+    printNumberList,
+    sum,
+    sumOrConcat,
+} from "./utils/math";
 
 function App() {
     return (
@@ -8,6 +14,7 @@ function App() {
             <p>{sumOrConcat("aria", "bahrami")}</p>
             <p>{sumOrConcat(12, 2)}</p>
             <p>{payStatus("payed")}</p>
+            <p>{printNumberList(["apple", "banana", 2])}</p>
         </div>
     );
 }
