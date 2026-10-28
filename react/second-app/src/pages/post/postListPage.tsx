@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router";
 
 type PostItem = {
     id: number;
@@ -16,6 +17,7 @@ type Post = {
 
 export default function PostListPage() {
     const [postList, setPostList] = useState<PostItem[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -25,6 +27,8 @@ export default function PostListPage() {
                 setPostList(result.posts);
             } catch {
                 console.log("Error");
+            } finally {
+                setIsLoading(false);
             }
         };
 
@@ -32,10 +36,27 @@ export default function PostListPage() {
     }, []);
 
     return (
-        <div>
-            {postList.map((post) => (
-                <p key={post.id}>{post.title}</p>
-            ))}
+        <div className="flex gap-4">
+            {isLoading ? (
+                <p>Loading ... </p>
+            ) : (
+                <div>
+                    <aside className="border rounded-md p-4 w-[30%]">
+                        {postList.map((post) => (
+                            <Link
+                                key={post.id}
+                                to={`${post.id}`}
+                                className="block hover:text-blue-700"
+                            >
+                                {post.title}
+                            </Link>
+                        ))}
+                    </aside>
+                    <section className="border rounded-md p-4 w-full">
+                        <Outlet />
+                    </section>
+                </div>
+            )}
         </div>
     );
 }
